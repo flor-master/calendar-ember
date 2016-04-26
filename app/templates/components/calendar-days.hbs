@@ -1,0 +1,15 @@
+<div class="calendar-days">
+	<div class="calendar-days__item --days">M</div>
+	<div class="calendar-days__item --days">T</div>
+	<div class="calendar-days__item --days">W</div>
+	<div class="calendar-days__item --days">T</div>
+	<div class="calendar-days__item --days">F</div>
+	<div class="calendar-days__item --days">S</div>
+	<div class="calendar-days__item --days">S</div>
+
+	{{#each days as |day|}}
+		<div class="calendar-days__item">{{day.date}}</div>
+	{{/each}}
+	
+</div>
+
