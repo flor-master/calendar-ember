@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const CalnedarMonthRouter = Ember.Route.extend({
 	beforeModel(data){
-        console.log('month-model');
+        console.log('[MONTH-BEFORE-MODEL]');
 		let params = data.params['calendar.month'];
             if( ( typeof params.year !== 'undefined' && isNaN(parseInt(params.year)) ) ||  ( typeof params.month !== 'undefined' && isNaN(parseInt(params.month)) ) ){
                 return Ember.RSVP.reject('bad date!');  
@@ -10,6 +10,7 @@ const CalnedarMonthRouter = Ember.Route.extend({
     }, 
 
     model(params){
+        console.log('[MONTH-MODEL]');
     	return new Promise( (resolve) => {
             setTimeout(()=>{
                 let answer = {

@@ -3,10 +3,10 @@
     
 
     <nav class="calenar__header__nav"> 
-        {{#link-to 'calendar'}}<button>Month</button>{{/link-to}}
+        {{#link-to 'calendar.index'}}<button>Month</button>{{/link-to}}
         <button {{action "prevMonth" model.year model.month }}>&#x2770;</button> 
         <button {{action "today"}}>Today</button>
         <button {{action "nextMonth" model.year model.month }}>&#x2771;</button>
     </nav>
 </div>
-{{calendar-days year=model.year month=model.month totalDays=42}}
+{{calendar-days year=model.year month=model.month totalDays=7}}

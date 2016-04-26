@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     nextMonth(year, month) { 
-		month = parseInt(month) + 1;
-		if ( month > 12 ) {
-			month = 1;
-			year++;
-		}
-		this.transitionToRoute('/calendar/' + year + '/' + month + '/');
+  		month = parseInt(month) + 1;
+  		if ( month > 12 ) {
+  			month = 1;
+  			year++;
+  		}
+      this.transitionToRoute('calendar.month', year, month);
     },
 
 	prevMonth(year, month) { 
@@ -17,12 +17,11 @@ export default Ember.Controller.extend({
 			month = 12;
 			year--;
 		}
-		this.transitionToRoute('/calendar/' + year + '/' + month + '/');
+    this.transitionToRoute('calendar.month', year, month);
     },
     
     today() {
-    	let month = new Date().getMonth() + 1;
-    	this.transitionToRoute('/calendar/' + new Date().getFullYear() + '/' + month + '/');	
+    	this.transitionToRoute('calendar.month', new Date().getFullYear(), new Date().getMonth()+1);	
     }
 
 

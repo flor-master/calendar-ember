@@ -7,10 +7,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() { 
 	this.route('calendar', function(){
-		this.route('month', {path: '/:year/:month'});  
+    this.route('index', { path: '/' });
+		this.route('month', {path: '/:year/:month'});
 		this.route('week', {path: 'week'}); 
-	});
-    this.route('page_not_found', {path: '/*path'});
+	}); 
+  this.route('page_not_found', {path: '/*path'}); 
 });
 
 export default Router;
