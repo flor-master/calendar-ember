@@ -8,8 +8,11 @@
 	<div class="calendar-days__item --days">S</div>
 
 	{{#each days as |day|}}
-		<div class="calendar-days__item">{{day.date}}</div>
+		<div class="calendar-days__item" {{action 'openPopup' timestamp}}>
+			{{day.date}}
+		</div>
 	{{/each}}
 	
 </div>
 
+{{yield}}

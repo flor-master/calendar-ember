@@ -1,26 +1,19 @@
 import Ember from 'ember';
 
 const CalnedarMonthRouter = Ember.Route.extend({
-	beforeModel(data){
-        console.log('[MONTH-BEFORE-MODEL]');
-		let params = data.params['calendar.month'];
-            if( ( typeof params.year !== 'undefined' && isNaN(parseInt(params.year)) ) ||  ( typeof params.month !== 'undefined' && isNaN(parseInt(params.month)) ) ){
-                return Ember.RSVP.reject('bad date!');  
-            }        
-    }, 
+    beforeModel(params) {
+      console.log('[MONTH-INDEX-ROUTER]');
+      console.log(params);
+      //this.replaceWith('calendar.month.timestamp', new Date().getTime() );
+   },
 
-    model(params){
-        console.log('[MONTH-MODEL]');
-    	return new Promise( (resolve) => {
-            setTimeout(()=>{
-                let answer = {
-                	'year': (params.year ? parseInt(params.year) : new Date().getFullYear()), 
-                	'month': (params.month ? parseInt(params.month) : new Date().getMonth())
-                };
-                resolve(answer);
-            }, 500); 
-        });      
+   actions: {
+        openPopupHandler(){
+          console.log('openPopup ROUTER');
+        }
     }
+
+
 });
 
 export default CalnedarMonthRouter;

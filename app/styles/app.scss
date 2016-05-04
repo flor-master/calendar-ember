@@ -17,11 +17,13 @@ html, body{
 .calendar{
   &__header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     &__nav{
-      button{
+      button{ 
         cursor: pointer;
+        line-height: 20px;
+        height: 25px;  
       }
     }
   }
@@ -38,6 +40,33 @@ html, body{
     &.--days{
       border-color: transparent;
       height: 40px;
+    }
+  }
+}
+
+.popup{
+  position: fixed;
+  width: 500px;
+  min-height: 500px;
+  top: 50%;
+  left: 50%;
+  border: solid 1px;
+  background: #c1c1c1;
+  transform: translate(-50%, -50%);
+
+  .close{
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: solid 1px;
+    background: #e1e1e1;
+    &:hover{
+      background: #f1f1f1;
     }
   }
 }
